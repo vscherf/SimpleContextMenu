@@ -1,12 +1,12 @@
 # SimpleContextMenu
 stellt ein einfaches Kontextmenü für HTML-Steuerelemente zur Verfügung
 
-// by Volker Scherf
-// fügt einem HTML-Feld ein Kontextmenü hinzu
-// (mit Inspiration des Kontextmenüs von jsTree)
-// als Übergabeparameter wird ein JSON-Object erwartet
-// dieses enthält wiederum zwei JSON-Objecte: defaults und items
-//Parameter:
+by Volker Scherf
+fügt einem HTML-Feld ein Kontextmenü hinzu
+(mit Inspiration des Kontextmenüs von jsTree)
+als Übergabeparameter wird ein JSON-Object erwartet
+dieses enthält wiederum zwei JSON-Objecte: defaults und items
+Parameter:
 // Legende:  * Pflichtfelder
 //           # zwar keine Pflichtfelder, aber ohne macht es keinen rechten Sinn
 
