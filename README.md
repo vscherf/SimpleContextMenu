@@ -1,20 +1,20 @@
 # SimpleContextMenu
 stellt ein einfaches Kontextmenü für HTML-Steuerelemente zur Verfügung
 
-by Volker Scherf
-fügt einem HTML-Feld ein Kontextmenü hinzu
-(mit Inspiration des Kontextmenüs von jsTree)
-als Übergabeparameter wird ein JSON-Object erwartet
-dieses enthält wiederum zwei JSON-Objecte: defaults und items
-Parameter:
-// Legende:  * Pflichtfelder
-//           # zwar keine Pflichtfelder, aber ohne macht es keinen rechten Sinn
+- by Volker Scherf
+- fügt einem HTML-Feld ein Kontextmenü hinzu
+- (mit Inspiration des Kontextmenüs von jsTree)
+- als Übergabeparameter wird ein JSON-Object erwartet
+- dieses enthält wiederum zwei JSON-Objecte: defaults und items
+- Parameter:
+- Legende:  * Pflichtfelder
+-            # zwar keine Pflichtfelder, aber ohne macht es keinen rechten Sinn
 
-// 'defaults': {                                optional
-//  'in': 'fade',                               optional: Effekt zum einblenden
-//  'out': 'fade',                              optional: Effekt zum ausblenden
-//  'hideDefaultContext': 'true',               optional: legt fest, ob auf dem Kontextmenü selbst, das Standard-Kontextmenu ausgeblendet werden soll, wenn nicht, dann Parameter weglassen
-//  'targetClass': 's-cm-target',               optional: legt fest, ob beim Rechtsklick auf das Feld, dieses markiert wird, wenn nicht, dann Parameter weglassen
+-  'defaults': {                                optional
+-   'in': 'fade',                               optional: Effekt zum einblenden
+-   'out': 'fade',                              optional: Effekt zum ausblenden
+-   'hideDefaultContext': 'true',               optional: legt fest, ob auf dem Kontextmenü selbst, das Standard-Kontextmenu ausgeblendet werden soll, wenn nicht, dann Parameter weglassen
+-   'targetClass': 's-cm-target',               optional: legt fest, ob beim Rechtsklick auf das Feld, dieses markiert wird, wenn nicht, dann Parameter weglassen
 //  'headline': 'Überschrift'                   optional: legt fest, welcher Text als Überschrift angezeigt werden soll (wenn nicht vorhanden, dann keine Überschrift)
 // }
 // wenn keine defaults angebenen werden, dann werden Standardwerte hergenommen
