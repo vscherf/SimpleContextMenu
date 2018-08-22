@@ -1,0 +1,26 @@
+[
+  {
+    "outputFileName": "jsContextMenu/CSS/Contextmenu.min.css",
+    "inputFiles": [
+      "jsContextMenu/CSS/Contextmenu.css"
+    ]
+  },
+  {
+    "outputFileName": "jsContextMenu/Script/Contextmenu.min.js",
+    "inputFiles": [
+      "jsContextMenu/Script/Contextmenu.js"
+    ]
+  },
+  {
+    "outputFileName": "CSS/App.min.css",
+    "inputFiles": [
+      "CSS/App.css"
+    ]
+  },
+  {
+    "outputFileName": "Script/App.min.js",
+    "inputFiles": [
+      "Script/App.js"
+    ]
+  }
+]

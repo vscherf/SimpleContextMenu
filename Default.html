@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Contextmenü</title>
+    <script src="/jQuery/jquery-3.3.1.js"></script>
+    <script src="/jQuery/jquery-ui-1.12.1.js"></script>
+    <link rel="shortcut icon" href="">
+    <link href="/CSS/App.css" rel="stylesheet" />
+    <script src="/jQuery/jquery-3.3.1.js"></script>
+    <script src="/jQuery/jquery-ui-1.12.1.js"></script>
+    <link href="/jsContextMenu/CSS/Contextmenu.css" rel="stylesheet" />
+    <script src="/jsContextMenu/Script/Contextmenu.js"></script>
+    <script src="/Script/App.js"></script>
+</head>
+<body>
+    <h2>Demo für SimpleContextMenu</h2>
+    <div class="container">
+        <table id="tblContextDemo">
+            <thead>
+                <tr>
+                    <th>Spalte 1</th>
+                    <th>Spalte 2</th>
+                    <th>Spalte 3</th>
+                    <th>Spalte 4</th>
+                    <th>Spalte 5</th>
+                    <th>Spalte 6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Zeile 1</th>
+                    <td data-check-value="true">Feld 1.1</td>
+                    <td data-scm-txt-disabled="true" data-scm-add-disabled="true" style="color: red" title="mit gesperrten Elementen">Feld 1.2</td>
+                    <td data-check-value="true">Feld 1.3</td>
+                    <td data-check-disabled="true">Feld 1.4</td>
+                    <td data-scm-sel-disabled="true" data-opt-disabled="true">Feld 1.5</td>
+                </tr>
+                <tr>
+                    <th>Zeile 2</th>
+                    <td title="Feld mit direktem Rückgabewert auf 'hinzufügen'" data-check-value="true" data-scm-retvalue="Ok">Feld 2.1</td>
+                    <td data-check-value="true">Feld 2.2</td>
+                    <td data-check-value="true">Feld 2.3</td>
+                    <td data-scm-sub-disabled="true" data-scm-add-disabled="true" style="color: red;" title="mit gesperrten Elementen">Feld 2.4</td>
+                    <td>Feld 2.5</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <ul class="s-cm">
+            <li>Simple Context Menu</li>
+            <li class="s-cm-header">
+                Überschrift 1
+            </li>
+            <li class="s-cm-separator">
+                <a href="#">&nbsp;</a>
+            </li>
+            <li>
+                <a href="#">
+                    <i style="background:url('Dateien/Icons/24/add.png') center center no-repeat"></i>
+                    <span>&nbsp;</span>
+                    hinzufügen
+                </a>
+            </li>
+            <li>
+                <a href="#" class="s-cm-parent">
+                    <i style="background:url('Dateien/Icons/24/information.png') center center no-repeat"></i>
+                    <span>&nbsp;</span>
+                    Submenü
+                </a>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i style="background:url('Dateien/Icons/24/delete.png') center center no-repeat"></i>
+                            <span>&nbsp;</span>
+                            löschen
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="s-cm-header">
+                Überschrift 2
+            </li>
+            <li>
+                <a href="#">
+                    <i style="background:url('Dateien/Icons/24/delete.png') center center no-repeat"></i>
+                    <span>&nbsp;</span>
+                    löschen
+                </a>
+            </li>
+            <li>
+
+            </li>
+            <li class="s-cm-separator">
+                <a href="#">&nbsp;</a>
+            </li>
+            <li>
+                <a href="#" onclick="alert('Klick')">
+                    <i style="background:url('Dateien/Icons/24/@.png') center center no-repeat"></i>
+                    <span>&nbsp;</span>
+                    Nachricht
+                </a>
+            </li>
+        </ul>
+    </div>
+    <br />
+    <span id="context" class="has-scm" style="border: 1px solid #aaa; background-color: #6eb3fe; padding: 10px;">
+        Rechtslick für Kontextmenü
+    </span>
+    <p id="out" class="has-scm">
+
+    </p>
+</body>
+</html>
