@@ -3,6 +3,7 @@
 .s-cm {
     display: none;
     font-family: 'Exo 2';
+    z-index: 99999;
 }
 
     .s-cm,
