@@ -1,16 +1,11 @@
-﻿"use strict";
+"use strict";
 
-$(document).ready(function () {
-    //Standard-Kontext ausschalten
-    $("th, td, .has-scm").contextmenu(function () { return false; });
+$(document).ready(function ()
+{
     //ein Benutzerkontextmenü für Tabellenfelder
     let scm = {
         "defaults": {
-            "in": "fade",
             "out": "transfer",
-            "hideDefaultContext": false,
-            "targetClass": 's-cm-target',
-            "headline": "Simple Context Menu"
         },
         "items": {
             "itmHeader1": {
@@ -26,11 +21,13 @@ $(document).ready(function () {
                 'label': '<span>hinzufügen</span>',
                 'title': 'ein Standard-Button mit Separator -after-',
                 'icon': '/Dateien/Icons/24/add.png',
-                'action': function (sender, target) {
+                'action': function (sender, target)
+                {
                     fnSetOutput(sender, target);
                     target.html("hinzugefügt");
                 },
-                "disabled": function (target) {
+                "disabled": function (target)
+                {
                     //Beispielfunktion, um ein Element zu deaktivieren
                     if ($(target).data("scm-add-disabled")) { return true; }
                 }
@@ -43,7 +40,8 @@ $(document).ready(function () {
                 'title': 'Butten mit eigener CSS-Klasse',
                 'class': 's-cm-danger',
                 'icon': '/Dateien/Icons/24/delete.png',
-                'action': function (sender, target) {
+                'action': function (sender, target)
+                {
                     fnSetOutput(sender, target);
                 }
             },
@@ -53,10 +51,12 @@ $(document).ready(function () {
                 "title": "ein Untermenü mit Action",
                 //"icon": "/Dateien/Icons/24/information.png",
                 "separator_before": true,
-                'action': function (sender, target) {
+                'action': function (sender, target)
+                {
                     fnSetOutput(sender, target);
                 },
-                "disabled": function (target) {
+                "disabled": function (target)
+                {
                     //Beispielfunktion, um ein Element zu deaktivieren
                     if ($(target).data("scm-sub-disabled")) { return true; }
                 },
@@ -68,7 +68,8 @@ $(document).ready(function () {
                             "label": "ändern",
                             "title": "den Eintrag bearbeiten",
                             "icon": "/Dateien/Icons/24/edit.png",
-                            'action': function (sender, target) {
+                            'action': function (sender, target)
+                            {
                                 fnSetOutput(sender, target);
                             }
                         },
@@ -86,7 +87,8 @@ $(document).ready(function () {
                             "label": "kopieren",
                             "title": "den Eintrag kopieren",
                             "icon": "/Dateien/Icons/24/copy.png",
-                            'action': function (sender, target) {
+                            'action': function (sender, target)
+                            {
                                 fnSetOutput(sender, target);
                             }
                         },
@@ -96,7 +98,8 @@ $(document).ready(function () {
                             "label": "einfügen",
                             "title": "den Eintrag einfügen",
                             "icon": "/Dateien/Icons/24/paste.png",
-                            'action': function (sender, target) {
+                            'action': function (sender, target)
+                            {
                                 fnSetOutput(sender, target);
                             }
                         },
@@ -114,7 +117,8 @@ $(document).ready(function () {
                                         "label": "ändern",
                                         "title": "den Eintrag bearbeiten",
                                         "icon": "/Dateien/Icons/24/edit.png",
-                                        'action': function (sender, target) {
+                                        'action': function (sender, target)
+                                        {
                                             fnSetOutput(sender, target);
                                         }
                                     },
@@ -132,7 +136,8 @@ $(document).ready(function () {
                                         "label": "kopieren",
                                         "title": "den Eintrag kopieren",
                                         "icon": "/Dateien/Icons/24/copy.png",
-                                        'action': function (sender, target) {
+                                        'action': function (sender, target)
+                                        {
                                             fnSetOutput(sender, target);
                                         }
                                     },
@@ -142,7 +147,8 @@ $(document).ready(function () {
                                         "label": "einfügen",
                                         "title": "den Eintrag einfügen",
                                         "icon": "/Dateien/Icons/24/paste.png",
-                                        'action': function (sender, target) {
+                                        'action': function (sender, target)
+                                        {
                                             fnSetOutput(sender, target);
                                         }
                                     }
@@ -164,16 +170,20 @@ $(document).ready(function () {
                 'id': 'txtSCM1',
                 'placeholder': 'nix drin',
                 'title': 'einen Text eingeben',
-                'value': function (target) {
-                    if ($(target).html().indexOf(".2") > 0) {
+                'value': function (target)
+                {
+                    if ($(target).html().indexOf(".2") > 0)
+                    {
                         return null;
                     }
                     return $(target).html();
                 },
-                'disabled': function (target) {
+                'disabled': function (target)
+                {
                     if ($(target).data("scm-txt-disabled")) { return true; }
                 },
-                'action': function (sender, target) {
+                'action': function (sender, target)
+                {
                     alert(sender.val());
                 }
             },
@@ -183,7 +193,8 @@ $(document).ready(function () {
                 'label': 'Nachricht',
                 'title': 'ein Standard-Button',
                 'icon': '/Dateien/Icons/24/@.png',
-                'action': function (sender, target) {
+                'action': function (sender, target)
+                {
                     alert("Die Nachricht lautet: '" + $('#txtSCM1').val() + "'");
                     fnSetOutput(sender, target);
 
@@ -200,6 +211,7 @@ $(document).ready(function () {
                 'type': 'select',
                 'id': 'selSCM1',
                 'title': 'setzt die Hintergrundfarbe des Kontextfelds',
+                'hasNullValue': true,
                 'listItems': { // entweder direkt angeben
                     'itm0': { 'val': '', 'text': 'Standard' },
                     'itm1': { 'val': '#ff0000', 'text': 'Rot' },
@@ -218,14 +230,16 @@ $(document).ready(function () {
                 //    };
                 //    return jsn;
                 //},
-                'action': function (sender, target) {
+                'action': function (sender, target)
+                {
                     let value = $(sender).find(":selected").val();
                     let text = $(sender).find(":selected").text();
                     $("#out").html("Es wurde '" + text + "' (value: '" + value + "') ausgewählt.");
                     $(target).css("background-color", value);
                     $(target).attr("data-backcolor", value);
                 },
-                'disabled': function (target) {
+                'disabled': function (target)
+                {
                     if ($(target).data("scm-sel-disabled")) { return true; }
                 }
             },
@@ -234,7 +248,8 @@ $(document).ready(function () {
                 "type": 'button',
                 "title": 'ein Haufen voller Optionen',
                 'separator_before': true,
-                "disabled": function (target) {
+                "disabled": function (target)
+                {
                     if ($(target).data("opt-disabled")) { return true; }
                 },
                 "disableTitle": "außer Betrieb",
@@ -244,16 +259,19 @@ $(document).ready(function () {
                             'label': 'mögliche Designs für Check-, bzw. Toggelboxen',
                             'type': 'header'
                         },
-
+                        "itemCheck0": {
+                            "type": "checkbox",
+                            "label": "Standard",
+                            "title": "Standard-Checkbox ohne weitere Optionen"
+                        },
                         "itemCheck2": {
                             "type": "checkbox",
                             "id": "toggle2",
                             "label": "Flat &nbsp;<span id='status_ist2'></span>",
                             "mode": "flat",
                             "title": "eine feine Checkbox",
-                            "dataOn": "On",
-                            "dataOff": "Off",
-                            "action": function (sender, target) {
+                            "action": function (sender, target)
+                            {
                                 let retVal = !sender.prop("checked");
                                 let stat = "OFF";
                                 if (retVal) { stat = "ON"; }
@@ -268,7 +286,8 @@ $(document).ready(function () {
                             "title": "eine feine Checkbox",
                             "dataOn": "On",
                             "dataOff": "Off",
-                            "action": function (sender, target) {
+                            "action": function (sender, target)
+                            {
                                 let retVal = !sender.prop("checked");
                                 let stat = "OFF";
                                 if (retVal) { stat = "ON"; }
@@ -283,7 +302,8 @@ $(document).ready(function () {
                             "title": "eine feine Checkbox",
                             "dataOn": "On",
                             "dataOff": "Off",
-                            "action": function (sender, target) {
+                            "action": function (sender, target)
+                            {
                                 let retVal = !sender.prop("checked");
                                 let stat = "OFF";
                                 if (retVal) { stat = "ON"; }
@@ -298,11 +318,13 @@ $(document).ready(function () {
                             "title": "ändert den Wert im Kontextfeld",
                             "dataOn": "On",
                             "dataOff": "Off",
-                            "disabled": function (target) {
+                            "disabled": function (target)
+                            {
                                 if ($(target).data("check-disabled")) { return true; }
                             },
                             "disableTitle": "außer Betrieb",
-                            "action": function (sender, target) {
+                            "action": function (sender, target)
+                            {
                                 let retVal = !sender.prop("checked");
                                 $(target).attr("data-check-value", retVal);
                                 $(target).html(retVal.toString());
@@ -310,7 +332,8 @@ $(document).ready(function () {
                                 if (retVal) { stat = "ON"; }
                                 $("#status_ist1").html(stat);
                             },
-                            "value": function (target) {
+                            "value": function (target)
+                            {
                                 let val = $(target).attr("data-check-value");
                                 return val;
                             }
@@ -323,7 +346,8 @@ $(document).ready(function () {
                             "title": "eine feine Checkbox",
                             "dataOn": "On",
                             "dataOff": "Off",
-                            "action": function (sender, target) {
+                            "action": function (sender, target)
+                            {
                                 let retVal = !sender.prop("checked");
                                 let stat = "OFF";
                                 if (retVal) { stat = "ON"; }
@@ -335,7 +359,7 @@ $(document).ready(function () {
             }
         }
     };
-    $("td").ContextMenu(scm);
+    $("td").SimpleContextMenu(scm);
 
     //ein Benutzerkontextmenü für Kopfzeilen im Header
     scm = {
@@ -351,22 +375,18 @@ $(document).ready(function () {
                 'type': 'button',
                 'title': 'ein Standard-Button mit Separator -after-',
                 'icon': '/Dateien/Icons/24/add.png',
-                'action': function (sender, target) {
+                'action': function (sender, target)
+                {
                     fnSetOutput(sender, target);
                 },
                 'separator_after': true
             }
         }
     };
-    $("thead th").ContextMenu(scm);
+    $("thead th").SimpleContextMenu(scm);
 
     //ein Benutzerkontextmenü für Kopfzeilen im Body
     scm = {
-        "defaults": {
-            "in": "fade",
-            "out": "fade"
-        },
-
         "items": {
             "itmHeader2": {
                 'label': 'Zeile',
@@ -382,20 +402,17 @@ $(document).ready(function () {
                 'type': 'button',
                 'title': 'ein Standard-Button',
                 'icon': '/Dateien/Icons/24/@.png',
-                'action': function (sender, target) {
+                'action': function (sender, target)
+                {
                     fnSetOutput(sender, target);
                 }
             }
         }
     };
-    $("tbody th").ContextMenu(scm);
+    $("tbody th").SimpleContextMenu(scm);
 
     //ein Benutzerkontextmenü für HTML-Elemente
     scm = {
-        "defaults": {
-            "hideDefaultContext": true,
-            "setTargetClass": true
-        },
         "items": {
             "itmHeader2": {
                 'label': '<div style="color: #eeaa00;">HTML-Element</div>',
@@ -411,16 +428,18 @@ $(document).ready(function () {
                 'type': 'button',
                 'title': 'ein Standard-Button',
                 'icon': '/Dateien/Icons/24/@.png',
-                'action': function (sender, target) {
+                'action': function (sender, target)
+                {
                     fnSetOutput(sender, target);
                 }
             }
         }
     };
-    $(".has-scm").ContextMenu(scm);
+    $(".has-scm").SimpleContextMenu(scm);
 });
 
-function fnSetOutput(sender, field) {
+function fnSetOutput(sender, field)
+{
     $("#out").html(
         "<em>Kontextmenü geklickt<br /></em>Button: '" +
         sender.prop("innerText") + "' (Tag: " + sender.prop("tagName") + ")<br />ID: " +
